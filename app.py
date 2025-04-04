@@ -29,7 +29,7 @@ pn.extension()
 
 output_notebook()
 
-data = pd.read_csv('/Users/sanyuktatuti/downloads/st5442_Assignment4/global-plastics-production.csv') #the path needs to be inserted accordingly to recreate visualization
+data = pd.read_csv('global-plastics-production.csv') #the path needs to be inserted accordingly to recreate visualization
 
 df=data
 
@@ -151,7 +151,7 @@ layout1 = column(introduction, description, p, range_slider, play_button)
 #layout = column(p, range_slider, play_button)
 #show(layout)
 
-data2 = pd.read_csv('/Users/sanyuktatuti/downloads/st5442_Assignment4/plastic-production-by-sector.csv') #the path needs to be inserted accordingly to recreate visualization
+data2 = pd.read_csv('plastic-production-by-sector.csv') #the path needs to be inserted accordingly to recreate visualization
 
 df2 = data2
 
@@ -160,7 +160,7 @@ df2.head()
 df2.tail()
 
 # Load data
-data_path = '/Users/sanyuktatuti/downloads/st5442_Assignment4/plastic-production-by-sector.csv'
+data_path = 'plastic-production-by-sector.csv'
 df = pd.read_csv(data_path)
 
 df = df.rename(columns={
@@ -366,7 +366,7 @@ output_notebook()
 #output_notebook()
 #show(layout)
 
-data3 = pd.read_csv('/Users/sanyuktatuti/downloads/st5442_Assignment4/plastic-waste-generation-total.csv') #the path needs to be inserted accordingly to recreate visualization
+data3 = pd.read_csv('plastic-waste-generation-total.csv') #the path needs to be inserted accordingly to recreate visualization
 
 df3=data3
 df3.head(5)
@@ -377,7 +377,7 @@ df3.tail(5)
 output_notebook()
 
 # Load the plastic waste dataset
-data_path = '/Users/sanyuktatuti/downloads/st5442_Assignment4/plastic-waste-generation-total.csv'
+data_path = 'plastic-waste-generation-total.csv'
 df = pd.read_csv(data_path)
 
 # Filter for the year 2010
@@ -551,8 +551,8 @@ layout3 = column(narrative, p, legend_buttons)
 #layout = column(p, legend_buttons)
 #show(layout)
 
-data4 = pd.read_csv('/Users/sanyuktatuti/downloads/st5442_Assignment4/mismanaged-plastic-waste-per-capita.csv') #the path needs to be inserted accordingly to recreate visualization
-data5 = pd.read_csv('/Users/sanyuktatuti/downloads/st5442_Assignment4/GDP_per_capita.csv') #the path needs to be inserted accordingly to recreate visualization
+data4 = pd.read_csv('mismanaged-plastic-waste-per-capita.csv') #the path needs to be inserted accordingly to recreate visualization
+data5 = pd.read_csv('GDP_per_capita.csv') #the path needs to be inserted accordingly to recreate visualization
 
 df4 = data4
 df5 = data5
@@ -720,7 +720,7 @@ layout4 = column(narrative, p)
 # Show the plot
 #show(p)
 
-data6 = pd.read_csv('/Users/sanyuktatuti/downloads/st5442_Assignment4/waste-items-ocean-region.csv') #the path needs to be inserted accordingly to recreate visualization
+data6 = pd.read_csv('waste-items-ocean-region.csv') #the path needs to be inserted accordingly to recreate visualization
 
 df6 = data6
 
