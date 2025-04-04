@@ -10,6 +10,7 @@ Original file is located at
 import pandas as pd
 from bokeh.plotting import figure, show, output_notebook
 from bokeh.models import ColumnDataSource, HoverTool, RangeSlider, Button, NumeralTickFormatter
+#from bokeh.layouts import Column, Row, GridSpec
 from bokeh.layouts import column, row, gridplot
 from bokeh.io import push_notebook
 from bokeh.models import CustomJS, PrintfTickFormatter
@@ -26,8 +27,9 @@ from bokeh.models import HoverTool
 import pycountry_convert as pc
 import panel as pn
 pn.extension()
+from panel.layout import Column, Row, GridSpec
 
-output_notebook()
+#output_notebook()
 
 data = pd.read_csv('global-plastics-production.csv') #the path needs to be inserted accordingly to recreate visualization
 
@@ -142,7 +144,7 @@ on the urgent need for sustainable solutions. This is more than data—it’s a 
 </p>""")
 
 # Updating the layout to include the description
-layout1 = column(introduction, description, p, range_slider, play_button)
+layout1 = Column(introduction, description, p, range_slider, play_button)
 #show(layout)
 #pn.serve(layout)
 
@@ -356,8 +358,8 @@ The challenge is daunting, but every story has a turning point. Let this be ours
 </p>""")
 
 # Update layout to include the narrative
-layout2 = column(narrative, dropdown, p, row(play_button, range_slider))
-output_notebook()
+layout2 = Column(narrative, dropdown, p, Row(play_button, range_slider))
+#output_notebook()
 #show(layout)
 #pn.serve(layout)
 
@@ -374,7 +376,7 @@ df3.head(5)
 df3.tail(5)
 
 # Display Bokeh plots in the notebook
-output_notebook()
+#output_notebook()
 
 # Load the plastic waste dataset
 data_path = 'plastic-waste-generation-total.csv'
@@ -542,7 +544,7 @@ to shift from waste to worth, from problems to solutions. Together, we can rewri
 </p>""")
 
 # Update layout to include the narrative
-layout3 = column(narrative, p, legend_buttons)
+layout3 = Column(narrative, p, legend_buttons)
 #show(layout)
 #pn.serve(layout)
 
@@ -711,7 +713,7 @@ How can nations break free from this paradox to harmonize growth with stewardshi
 """)
 
 # Combine narrative and plot
-layout4 = column(narrative, p)
+layout4 = Column(narrative, p)
 #show(layout)
 #pn.serve(layout)
 
@@ -817,7 +819,7 @@ for region in regions:
 
 # Arrange plots
 grid = gridplot([plots[:2], plots[2:4], plots[4:6]])
-layout5 = column(main_title, grid)
+layout5 = Column(main_title, grid)
 
 # Show layout
 #show(layout)
@@ -845,7 +847,7 @@ conclusion = Div(
     """
 )
 
-combined_layout = column(
+combined_layout = Column(
     layout1,  # First visualization
     layout2,  # Second visualization
     layout3,  # Third visualization
@@ -862,4 +864,13 @@ combined_layout = column(
 #pn.serve(combined_layout)
 
 #pn.serve(combined_layout, show=False, port=10000, address="0.0.0.0")
-pn.serve(combined_layout, show=False, title="Plastic Dashboard", port=10000, address="0.0.0.0")
+#pn.serve(combined_layout, show=False, title="Plastic Dashboard", port=10000, address="0.0.0.0")
+
+#combined_layout.servable()
+
+
+#this ran locally with "python app.py" at server "http://localhost:5080"
+#pn.serve(combined_layout, show=True, port=5080, address="localhost", title="Plastic Dashboard")
+
+# This is for Render deployment
+app = combined_layout.servable()
