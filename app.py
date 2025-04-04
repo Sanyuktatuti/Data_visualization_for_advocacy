@@ -859,4 +859,7 @@ combined_layout = column(
 
 #full_layout.align = 'center'
 
-pn.serve(combined_layout)
+#pn.serve(combined_layout)
+
+#pn.serve(combined_layout, show=False, port=10000, address="0.0.0.0")
+pn.serve(combined_layout, show=False, title="Plastic Dashboard", port=10000, address="0.0.0.0")
