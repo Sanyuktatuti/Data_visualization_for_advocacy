@@ -1,0 +1,6 @@
+panel
+bokeh
+pandas
+numpy
+geopandas
+pycountry-convert
