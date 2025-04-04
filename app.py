@@ -859,6 +859,6 @@ combined_layout = column(
 
 #full_layout.align = 'center'
 
-def app():
-    return combined_layout
+# at bottom of app.py
+pn.serve(combined_layout, show=False)
 
